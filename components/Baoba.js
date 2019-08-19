@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Label from './Label.js';
 
+
 class Baoba extends React.Component {
   state = {
 		value: null,
@@ -23,7 +24,7 @@ class Baoba extends React.Component {
         return(
         <TouchableOpacity style={value === item.key
                         ? styles.main_container_open
-                        : styles.main_container} key={item.key} onPress={() => {this._onPress(value, item)}}>
+                        : styles.main_container} key={item.key} onPress={() => {this._onPress(value, item)}} activeOpacity={1}>
           <Image style={styles.image}/>
           <Label text="20min"/>
           <Text style={styles.main_text}>{item.text}</Text>
