@@ -6,26 +6,26 @@ class Buttons extends React.Component {
     let out;
 
     if (this.props.before) {
-      out = <TouchableOpacity style={styles.button}>
+      out = <View style={[styles.main_container, {marginTop: this.props.marginTop}]}>
+      <TouchableOpacity style={styles.button} activeOpacity={1}>
         <Image style={[styles.image, {marginRight: 10}]}/>
         <Text style={styles.text}>Retour</Text>
-      </TouchableOpacity>;
+      </TouchableOpacity>
+      </View>;
     }
     if (this.props.after) {
-      out = <TouchableOpacity style={styles.button}>
+      out = <View style={[styles.main_container, {marginTop: this.props.marginTop}]}>
+      <TouchableOpacity style={styles.button} activeOpacity={1}>
         <Image style={[styles.image, {marginRight: 10}]}/>
         <Text style={styles.text}>Retour</Text>
-      </TouchableOpacity>;
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>Commander</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} activeOpacity={1}>
+        <Text style={styles.text}>{this.props.text}</Text>
         <Image style={[styles.image, {marginLeft: 10}]}/>
-      </TouchableOpacity>;
+      </TouchableOpacity>
+      </View>;
     }
-    return(
-      <View style={styles.main_container}>
-        {out}
-      </View>
-    )
+    return out;
   }
 }
 

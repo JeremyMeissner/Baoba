@@ -6,23 +6,24 @@ import SlidingUpPanel from 'rn-sliding-up-panel';
 const {height} = Dimensions.get('window')
 
 class SliderBottom extends React.Component {
+
   render() {
     return(
-      /*
-      <ScrollView style={styles.main_container} contentInset={{top: 300, left: 0, bottom: -250, right: 0}} vertical={true} showsVerticalScrollIndicator={false}>
+
+      <ScrollView style={styles.main_container} vertical={true} showsVerticalScrollIndicator={false}>
         <View style={styles.slider}>
           <HeaderBaoba/>
-          <TitleBaoba text="Quel saveur vous fait envie ?"/>
+          {this.props.children}
         </View>
       </ScrollView>
-      */
+
+/*
       <View style={styles.main_container}>
         <SlidingUpPanel
         backdropOpacity={1}
         ref={c => (this._panel = c)}
         minimumVelocityThreshold={0.3}
         draggableRange={{top: height / this.props.top, bottom: this.props.bottom}}
-        animatedValue={this._draggedValue}
         showBackdrop={false}>
           <View style={styles.panel}>
             <View style={styles.panelHeader}>
@@ -34,23 +35,32 @@ class SliderBottom extends React.Component {
             </View>
         </SlidingUpPanel>
       </View>
+      */
     )
   }
 }
 
 const styles = StyleSheet.create({
-  /*
+
   main_container: {
-    top: 0,
-    left: 0,
-    right: 0,
+    alignSelf: 'flex-start',
     position: 'absolute',
-    bottom: 0,
+    bottom: -250,
+    overflow: 'visible',
+    borderTopRightRadius: 32,
+    borderTopLeftRadius: 32,
+    width: '100%',
   },
   slider: {
-
+    borderTopRightRadius: 32,
+    borderTopLeftRadius: 32,
+    alignSelf: 'flex-start',
+    backgroundColor: '#ffffff',
+    width: '100%',
+    paddingBottom: 268,
   }
-  */
+
+  /*
   main_container: {
     flex: 1,
     alignItems: 'center',
@@ -68,6 +78,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 32,
     backgroundColor: '#ffffff',
   },
+  */
 })
 
 export default SliderBottom;
