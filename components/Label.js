@@ -3,12 +3,20 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 
 class Label extends React.Component {
   render() {
-    return(
-      <View style={styles.main_container}>
+    let out;
+    if (this.props.big) {
+      out = <View style={[styles.main_container, {paddingHorizontal: 8, paddingVertical: 3}]}>
+        <Image style={[styles.image, {height: 10, width: 10}]}/>
+        <Text style={[styles.text, {fontSize: 12}]}>{this.props.text}</Text>
+      </View>
+    }
+    else {
+      out = <View style={styles.main_container}>
         <Image style={styles.image}/>
         <Text style={styles.text}>{this.props.text}</Text>
       </View>
-    )
+    }
+    return out;
   }
 }
 const styles = StyleSheet.create({

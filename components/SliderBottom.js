@@ -3,16 +3,16 @@ import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import HeaderBaoba from './HeaderBaoba.js';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 
-const {height} = Dimensions.get('window')
+let {height} = Dimensions.get('window');
+height = height + 250;
 
 class SliderBottom extends React.Component {
 
   render() {
     return(
-
       <ScrollView style={styles.main_container} vertical={true} showsVerticalScrollIndicator={false}>
         <View style={styles.slider}>
-          <HeaderBaoba/>
+          <HeaderBaoba big={this.props.big} navigation={this.props.navigation}/>
           {this.props.children}
         </View>
       </ScrollView>
@@ -43,8 +43,10 @@ class SliderBottom extends React.Component {
 const styles = StyleSheet.create({
 
   main_container: {
-    alignSelf: 'flex-start',
     position: 'absolute',
+    maxHeight: height,
+    left: 0,
+    right: 0,
     bottom: -250,
     overflow: 'visible',
     borderTopRightRadius: 32,

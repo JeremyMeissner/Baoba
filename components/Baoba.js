@@ -9,7 +9,7 @@ class Baoba extends React.Component {
 	};
   _onPress(value, item) {
     if (value === item.key) {
-
+      this.props.navigation.navigate("Personalization");
     }
     else {
       this.setState({ value: item.key, })
@@ -25,7 +25,7 @@ class Baoba extends React.Component {
         <TouchableOpacity style={value === item.key
                         ? styles.main_container_open
                         : styles.main_container} key={item.key} onPress={() => {this._onPress(value, item)}} activeOpacity={1}>
-          <Image style={styles.image}/>
+          <Image style={styles.image} source={item.img}/>
           <Label text="20min"/>
           <Text style={styles.main_text}>{item.text}</Text>
           <Text style={styles.size_text}>{item.size}</Text>
@@ -56,10 +56,8 @@ const styles = StyleSheet.create({
     minWidth: 118,
   },
   image: {
-    backgroundColor: 'grey',
     width: 63,
     height: 63,
-    borderRadius: 16,
     marginBottom: 8,
   },
   main_text: {

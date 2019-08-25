@@ -6,7 +6,6 @@ class Tasting extends React.Component {
     super(props)
     this.state = { state: false, count: 0 }
   }
-
   _onPressTasting = () => {
     this.setState({
       state: true,
@@ -35,13 +34,13 @@ class Tasting extends React.Component {
     console.log(this.state.count);
     if (this.state.state) {
       out = <TouchableOpacity style={[styles.choice, styles.active, {backgroundColor: this.props.backgroundColor}]} onPress={this._onPressTasting} activeOpacity={1}>
-        <Image style={styles.product_image}/>
+        <Image style={styles.product_image} source={this.props.image}/>
         <View style={styles.container}>
         <TouchableOpacity style={[styles.button, {backgroundColor: this.props.color}]} onPress={this._onPressMinus} activeOpacity={1}>
-          <Image style={styles.image}/>
+          <Image style={styles.image} source={require('../assets/minus.png')}/>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, {backgroundColor: this.props.color}]} onPress={this._onPressTasting} activeOpacity={1}>
-          <Image style={styles.image}/>
+          <Image style={styles.image} source={require('../assets/plus.png')}/>
         </TouchableOpacity>
         </View>
         <View style={[styles.count, {backgroundColor: this.props.color}]}>
@@ -51,10 +50,10 @@ class Tasting extends React.Component {
     }
     else {
       out = <TouchableOpacity style={[styles.choice, {backgroundColor: this.props.backgroundColor}, {borderColor: this.props.backgroundColor}]} onPress={this._onPressTasting} activeOpacity={1}>
-        <Image style={styles.product_image}/>
+        <Image style={styles.product_image} source={this.props.image}/>
         <View style={styles.container}>
         <TouchableOpacity style={[styles.button, {backgroundColor: this.props.color}]} onPress={this._onPressTasting} activeOpacity={1}>
-          <Image style={styles.image}/>
+          <Image style={styles.image} source={require('../assets/plus.png')}/>
         </TouchableOpacity>
         </View>
       </TouchableOpacity>;
@@ -73,17 +72,13 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   product_image: {
-    width: 28,
+    width: 40,
     height: 50,
     marginBottom: 13,
-    borderRadius: 8,
-    backgroundColor: 'grey',
   },
   image: {
     width: 20,
     height: 20,
-    borderRadius: 8,
-    backgroundColor: '#ffffff',
   },
   container: {
     position: 'absolute',

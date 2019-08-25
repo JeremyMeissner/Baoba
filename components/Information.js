@@ -21,11 +21,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     marginTop: 24,
-    paddingRight: 48,
+    paddingRight: 24,
     paddingLeft: 24,
   },
   container: {
     justifyContent: 'flex-start',
+    width: 0,
+    flexGrow: 1,
   },
   image: {
     width: 28,

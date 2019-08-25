@@ -7,21 +7,21 @@ class Buttons extends React.Component {
 
     if (this.props.before) {
       out = <View style={[styles.main_container, {marginTop: this.props.marginTop}]}>
-      <TouchableOpacity style={styles.button} activeOpacity={1}>
-        <Image style={[styles.image, {marginRight: 10}]}/>
+      <TouchableOpacity style={styles.button} activeOpacity={1} onPress={() => this.props.navigation.goBack()}>
+        <Image style={[styles.image, {marginRight: 10}]} source={require('../assets/arrow-left.png')}/>
         <Text style={styles.text}>Retour</Text>
       </TouchableOpacity>
       </View>;
     }
     if (this.props.after) {
       out = <View style={[styles.main_container, {marginTop: this.props.marginTop}]}>
-      <TouchableOpacity style={styles.button} activeOpacity={1}>
-        <Image style={[styles.image, {marginRight: 10}]}/>
+      <TouchableOpacity style={styles.button} activeOpacity={1} onPress={() => this.props.navigation.goBack()}>
+        <Image style={[styles.image, {marginRight: 10}]} source={require('../assets/arrow-left.png')}/>
         <Text style={styles.text}>Retour</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} activeOpacity={1}>
+      <TouchableOpacity style={styles.button} activeOpacity={1} onPress={() => this.props.navigation.navigate(this.props.next)}>
         <Text style={styles.text}>{this.props.text}</Text>
-        <Image style={[styles.image, {marginLeft: 10}]}/>
+        <Image style={[styles.image, {marginLeft: 10}]}source={require('../assets/arrow-right.png')}/>
       </TouchableOpacity>
       </View>;
     }
@@ -44,8 +44,6 @@ const styles = StyleSheet.create({
   image: {
     height: 23,
     width: 23,
-    backgroundColor: '#216CDD',
-    borderRadius: 10,
   },
   text: {
     fontSize: 18,
