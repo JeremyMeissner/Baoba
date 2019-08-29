@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TextInput, ScrollView } from 'react-native';
-import Baoba from './Baoba.js';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
+import Label from './Label.js';
 
 const options = [
 	{
@@ -26,54 +26,85 @@ const options = [
 	},
 ];
 
-class HomePage extends React.Component {
-  render() {
-    return (
-      <View style={styles.main_container}>
-        <View>
-          <View style={styles.header}>
-            <Text style={styles.header_title}>Baoba</Text>
-            <Image style={styles.header_image}/>
-          </View>
-          <TextInput style={styles.input} placeholder="Entrer votre adresse..."/>
-        </View>
-        <Baoba navigation={this.props.navigation} options={options}/>
+class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+  /*  this._onPress = this._onPress.bind(this); */
+  }
+  state = {
+		value: null,
+	};
 
-      </View>
+  _onPress(value, item) {
+    if (value === item.key) {
+      this.props.callback(item.key);
+    }
+    else {
+      this.setState({ value: item.key, })
+    }
+  }
+  render() {
+		const { value } = this.state;
+    return (
+      <ScrollView style={styles.scroll_choice} contentContainerStyle={styles.choice_container} horizontal={true} showsHorizontalScrollIndicator={false}>
+      {options.map(item => {
+        return(
+        <TouchableOpacity style={value === item.key
+                        ? styles.main_container_open
+                        : styles.main_container} key={item.key} onPress={() => {this._onPress(value, item)}} activeOpacity={1}>
+          <Image style={styles.image} source={item.img}/>
+          <Label text="20min"/>
+          <Text style={styles.main_text}>{item.text}</Text>
+          <Text style={styles.size_text}>{item.size}</Text>
+          </TouchableOpacity>
+        )
+        })}
+      </ScrollView>
     )
   }
 }
 const styles = StyleSheet.create({
   main_container: {
-    flex: 1,
-    backgroundColor: 'lightgrey',
-    paddingTop: 48,
-    paddingBottom: 42,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 24,
-    marginHorizontal: 24,
-  },
-  header_title: {
-    fontSize: 36,
-    fontWeight: '700',
-  },
-  header_image: {
-    height: 32,
-    width: 32,
-    borderRadius: 12,
-    backgroundColor: 'grey',
-  },
-  input: {
-    fontSize: 14,
-    paddingVertical: 14,
-    paddingHorizontal: 24,
+    alignSelf: 'flex-start',
     backgroundColor: '#ffffff',
-    borderRadius: 9,
-    marginHorizontal: 24,
+    marginRight: 24,
+    borderRadius: 16,
+    paddingVertical: 18,
+    paddingHorizontal: 16,
+    minWidth: 118,
   },
-});
-export default HomePage
+  main_container_open: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#001535',
+    marginRight: 24,
+    borderRadius: 16,
+    paddingVertical: 18,
+    paddingHorizontal: 16,
+    minWidth: 118,
+  },
+  image: {
+    width: 63,
+    height: 63,
+    marginBottom: 8,
+  },
+  main_text: {
+    marginTop: 8,
+    marginBottom: 2,
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#1B1561',
+  },
+  size_text: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#BEBDC8',
+  },
+  scroll_choice: {
+    position: 'absolute',
+    bottom: 42,
+  },
+  choice_container: {
+    paddingLeft: 24,
+  }
+})
+export default HomeScreen;

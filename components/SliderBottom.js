@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, Animated } from 'react-native';
 import HeaderBaoba from './HeaderBaoba.js';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 
@@ -10,12 +10,12 @@ class SliderBottom extends React.Component {
 
   render() {
     return(
-      <ScrollView style={styles.main_container} vertical={true} showsVerticalScrollIndicator={false}>
+      <Animated.ScrollView style={[styles.main_container, {bottom: this.props.height}]} vertical={true} showsVerticalScrollIndicator={false}>
         <View style={styles.slider}>
-          <HeaderBaoba big={this.props.big} navigation={this.props.navigation}/>
+          <HeaderBaoba big={this.props.big}/>
           {this.props.children}
         </View>
-      </ScrollView>
+      </Animated.ScrollView>
 
 /*
       <View style={styles.main_container}>

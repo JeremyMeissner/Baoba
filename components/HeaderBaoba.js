@@ -9,7 +9,7 @@ class HeaderBaoba extends React.Component {
     if (this.props.big) {
       out = <View style={styles.container}>
       <Image style={styles.baoba} source={require('../assets/baoba-black.png')}/>
-      <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")} activeOpacity={1}>
+      <TouchableOpacity activeOpacity={1}>
       <Image style={[styles.image, {marginBottom: 16}]} source={require('../assets/close2.png')} />
       </TouchableOpacity>
       <Label big={true} text="20min"/>
@@ -19,7 +19,7 @@ class HeaderBaoba extends React.Component {
     }
     else {
       out = <View style={styles.main_container}>
-      <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")} activeOpacity={1}>
+      <TouchableOpacity activeOpacity={1}>
       <Image style={styles.image} source={require('../assets/close2.png')}/>
       </TouchableOpacity>
         <Text style={styles.text}>Black Baoba</Text>

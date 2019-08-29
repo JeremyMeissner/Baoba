@@ -12,14 +12,14 @@ class SummaryPage extends React.Component {
     return(
       <View style={styles.main_container}>
         <Title text="Récapitulatif"/>
-        <SliderBottom big={true} navigation={this.props.navigation}>
+        <SliderBottom big={true}>
           <Information title="Adresse" description="25 Avenue Michel Caron, 1217 Meyrin"/>
           <Information title="Livraison prévue à" description="19h13"/>
           <Information title="Récuperation prévue" description="Dimanche vers 13h"/>
           <Information title="Goût" description="Pomme"/>
           <Information title="Suppléments" description="2 Coca Cola"/>
           <Information title="Prix" description="83.-"/>
-          <Buttons before={true} after={true} text="Commander" marginTop={24} navigation={this.props.navigation}/>
+          <Buttons before={true} after={true} text="Commander" marginTop={24}/>
         </SliderBottom>
       </View>
     )

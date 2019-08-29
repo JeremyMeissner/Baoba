@@ -13,7 +13,7 @@ class PersonalizationPage extends React.Component {
     return(
       <View style={styles.main_container}>
         <Title text="Supplément"/>
-        <SliderBottom navigation={this.props.navigation}>
+        <SliderBottom>
           <TitleBaoba text="Une dégustation supplémentaire ?"/>
           <View style={styles.container}>
             <Tasting color="#6BCAFF" backgroundColor="#C1DEED" image={require('../assets/sprite.png')}/>
@@ -25,7 +25,7 @@ class PersonalizationPage extends React.Component {
             <Tasting color="#A090FF" backgroundColor="#D1CCED" image={require('../assets/lays.png')}/>
             <Tasting color="#F4E76E" backgroundColor="#EAE6C2" image={require('../assets/cocacola.png')}/>
           </View>
-          <Buttons before={true} after={true} text="Suivant" next="Summary" marginTop={14} navigation={this.props.navigation}/>
+          <Buttons before={true} after={true} text="Suivant" next="Summary" marginTop={14}/>
           </SliderBottom>
       </View>
     )
