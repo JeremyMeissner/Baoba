@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Garden - Index</title>
+  <link href="./css/style.css" type="text/css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <img class="bg-green" src="./img/bg-green.svg" alt="Green background">
+  <img class="bg-woman" src="./img/bg-woman.png" alt="Woman background">
+  <div class="out-header">
+    <header>
+      <span class="hamburger">
+        <img src="./img/icon-hamburger.svg" alt="Icon hamburger">
+      </span>
+      <a class="logo" href="./index.html">
+        <img src="./img/logo.svg" alt="Garden logo">
+      </a>
+      <ul>
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./works.html">OUR WORKS</a></li>
+        <li><a href="./about.html">ABOUT US</a></li>
+        <li><a href="./contact.html">CONTACT</a></li>
+      </ul>
+      <a class="btn-primary" href="./index.html#quote">REQUEST A QUOTE</a>
+    </header>
+  </div>
+  <ul class="mobile">
+    <li><a href="./index.html">HOME</a></li>
+    <li><a href="./works.html">OUR WORKS</a></li>
+    <li><a href="./about.html">ABOUT US</a></li>
+    <li><a href="./contact.html">CONTACT</a></li>
+  </ul>
+  <section class="main-title">
+    <h1>Our customers are very happy</h1>
+    <p>See how, a lot of big company trust in us and use our services every month, we are Garden</p>
+    <a class="btn-secondary" href="./works.html">LOOK AT OUR WORKS</a>
+  </section>
+  <section class="main-description">
+    <div class="description">
+      <h5>You’re a company ?</h5>
+      <p>We’ll make the best for the garden of your company and you know why ? Because this is what we prefer to do. Get a look at your company <a class="link" href="./works.html">garden works</a>.</p>
+    </div>
+    <div class="description">
+      <h5>You’re a customer ?</h5>
+      <p>Your house is the best thing in the world, but with a not great garden your house will look not very nice, this is why we are here. You're interested?  Look at your customers <a class="link" href="./works.html">garden works</a>.</p>
+    </div>
+  </section>
+  <section class="section-quote">
+    <svg class="bg-grey" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 2051 862" fill="none">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M2050.28 465.647C2028.12 465.53 1534.72 460.366 1025.53 233.15C504.5 0.649902 0 0.649902 0 0.649902V862H2050.28V465.647Z" fill="#F4F4F4"/>
+    </svg>
+    <form class="quote" action="index.html" method="post" id="quote">
+      <img class="left-scene" src="./img/icon-scene1.svg" alt="Left scene">
+      <img class="right-scene" src="./img/icon-scene2.svg" alt="Right scene">
+      <h3>Request a quote</h3>
+      <p>We will back to you very soon</p>
+      <div class="type-user">
+        <label class="type" for="company">
+          <input type="radio" name="type" id="company" checked>
+          <i></i>
+          <img src="./img/icon-building.svg" alt="Icon Building">
+          <span>I'm a company</span>
+        </label>
+        <label class="type" for="customer">
+          <input type="radio" name="type" id="customer">
+          <i></i>
+          <img src="./img/icon-house.svg" alt="Icon Building">
+          <span>I'm a customer</span>
+        </label>
+      </div>
+      <div class="input-list">
+        <input class="input" type="text" name="firstname" placeholder="First name" required>
+        <input class="input" type="text" name="lastname" placeholder="Last name" required>
+        <input class="input" type="text" name="average m²" placeholder="Average m²" required>
+        <input class="input" type="text" name="email" placeholder="Email" required>
+        <div class="select">
+          <select name="country" required>
+            <option value="united states" disabled selected>Select country</option>
+            <option value="united states">United States</option>
+            <option value="switzerland">Switzerland</option>
+            <option value="canada">Canada</option>
+          </select>
+        </div>
+        <input class="input" type="text" name="phone number" placeholder="Phone number" required>
+      </div>
+      <div class="additional-choice">
+        <label class="choice" for="swimming pool">
+          <input type="checkbox" name="swimming pool" id="swimming pool" value="swimming pool">
+          <i class="border"></i>
+          <i class="checkmark"></i>
+          <img src="./img/icon-pool.svg" alt="Swimming pool">
+          <span>Swimming pool</span>
+        </label>
+        <label class="choice" for="tree">
+          <input type="checkbox" name="tree" id="tree" value="tree">
+          <i class="border"></i>
+          <i class="checkmark"></i>
+          <img src="./img/icon-tree.svg" alt="Lot of tree">
+          <span>Lot of tree</span>
+        </label>
+      </div>
+      <div class="checkbox-list">
+        <label class="checkbox" for="newsletters">
+          <input type="checkbox" name="newsletters" id="newsletters" value="newsletters">
+          <i class="checkmark"></i>
+          <p>I want to receive Garden's Newsletters</p>
+        </label>
+      </div>
+      <button class="btn-primary" type="submit" name="button">REQUEST A QUOTE</button>
+    </form>
+  </section>
+  <section class="section-testimonial">
+    <img src="./img/logo-porsche.svg" alt="Porsche logo">
+    <img src="./img/logo-ubs.svg" alt="UBS logo">
+    <img src="./img/logo-rolex.svg" alt="Rolex logo">
+    <img src="./img/logo-alphabet.svg" alt="Alphabet logo">
+  </section>
+  <section class="section-work">
+    <h2>Our works</h2>
+    <p>This is why we are the best</p>
+    <div class="inner-work">
+      <div class="main-work">
+        <div class="work" style="background-image: url('./img/villa-example1.png')"></div>
+        <div class="informations">
+          <h5>Hotel Mediterraneen</h5>
+          <img class="marks" src="./img/icon-testimonial.svg" alt="Testimonial icon">
+          <p>Work with Garden is a great honorable sessions because we love it and what we’re doing so we w’ll work with Garden for ever !</p>
+          <span>ANNE ROUMANOF, CEO</span>
+        </div>
+      </div>
+      <div class="main-work">
+        <div class="work" style="background-image: url('./img/villa-example2.png')"></div>
+        <div class="informations">
+          <h5>Villa Marjina</h5>
+          <img class="marks" src="./img/icon-testimonial.svg" alt="Testimonial icon">
+          <p>We work with Garden since 2012 and its we us we have acces to your 5 stars !</p>
+          <span>PHILIPE BRUGOU, FATHER</span>
+        </div>
+      </div>
+      <div class="main-work">
+        <div class="work" style="background-image: url('./img/villa-example3.png')"></div>
+        <div class="informations">
+          <h5>Hotel Grenny</h5>
+          <img class="marks" src="./img/icon-testimonial.svg" alt="Testimonial icon">
+          <p>I really love her work and you know all of the team earn as much 25% up to the minimal salary ? That’s crazy.</p>
+          <span>LUAN DOUILLION, CS</span>
+        </div>
+      </div>
+      <div class="main-work">
+        <div class="work" style="background-image: url('./img/villa-example4.png')"></div>
+        <div class="informations">
+          <h5>Ikea Center</h5>
+          <img class="marks" src="./img/icon-testimonial.svg" alt="Testimonial icon">
+          <p>Garden is a professionnal team that will make your green park into a beauthiful green park.</p>
+          <span>MICHEL DROZ, SUPPORT</span>
+        </div>
+      </div>
+    </div>
+    <a class="link" href="./works.html">See all the works...</a>
+  </section>
+  <section class="section-about">
+    <svg class="bg-grey" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 1017" fill="none">
+      <path d="M0 0H1440V942.584C1440 942.584 1020 1108 720 942.584C420 777.168 0 942.584 0 942.584V0Z" fill="#F4F4F4"/>
+    </svg>
+    <section class="inner-about">
+      <img class="bg-woman" src="./img/bg-woman2.png" alt="Woman garden">
+      <h2>About us</h2>
+      <p>The company is the most important thing after make great Garden, our employees love work, together make the future.</p>
+      <section class="section-anecdote">
+        <div class="anecdote">
+          <img src="./img/icon-happy.svg" alt="Happy icon">
+          <span>98% Happy customers</span>
+        </div>
+        <div class="anecdote">
+          <img src="./img/icon-unlink.svg" alt="Unlink icon">
+          <span>14 paid holidays for our employees</span>
+        </div>
+        <div class="anecdote">
+          <img src="./img/icon-earth.svg" alt="Earth icon">
+          <span>Our facilities use 100% renewable energy</span>
+        </div>
+        <div class="anecdote">
+          <img src="./img/icon-users.svg" alt="Users icon">
+          <span>We’ve currently 204 employees</span>
+        </div>
+      </section>
+      <a class="btn-secondary" href="./jobs.html">LOOK AT OUR JOB OFFERS</a>
+    </section>
+  </section>
+  <footer>
+    <div class="footer-start">
+      <div class="case">
+        <img src="./img/icon-phone.svg" alt="Phone icon">
+        <div class="text">
+          <p>Call us</p>
+          <span>(+41) 78 888 87</span>
+        </div>
+      </div>
+      <div class="case">
+        <img src="./img/icon-mail.svg" alt="Mail icon">
+        <div class="text">
+          <p>Email us</p>
+          <span>hello@garden.com</span>
+        </div>
+      </div>
+      <div class="case">
+        <img src="./img/icon-location.svg" alt="Location icon">
+        <div class="text">
+          <p>Address</p>
+          <span>125 avenue du Jet</span>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-end">
+      <img src="./img/logo.svg" alt="Garden logo">
+      <div class="footer-link">
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./works.html">OUR WORKS</a></li>
+          <li><a href="./about.html">ABOUT US</a></li>
+          <li><a href="./contact.html">CONTACT</a></li>
+          <li><a href="./jobs.html">JOBS OFFERS</a></li>
+        </ul>
+      </div>
+      <span>© Copyright Garden 2019</span>
+    </div>
+  </footer>
+  <script src="./js/mobile.js" type="text/javascript"></script>
+</body>
+</html>
